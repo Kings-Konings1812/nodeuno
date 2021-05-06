@@ -7,6 +7,7 @@ const { body } = require('express-validator/check');
 //importar el controlador
 const proyectosController = require('../controllers/proyectosController');
 const tareasController = require('../controllers/tareasController');
+
 //importar modulos
 module.exports = function() {
 
