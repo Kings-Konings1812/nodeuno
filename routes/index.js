@@ -38,6 +38,10 @@ module.exports = function() {
     router.patch('/tareas/:id', 
         tareasController.cambiarEstadoTarea
     );
+        // Eliminar Tarea
+    router.delete('/tareas/:id',
+        tareasController.eliminarTarea
+    );
 
 
 	

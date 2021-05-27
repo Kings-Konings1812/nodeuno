@@ -41,3 +41,16 @@ exports.cambiarEstadoTarea = async (req, res) => {
     
     res.status(200).send('Actualizado');
 }
+
+//controlador eliminarTareas
+exports.eliminarTarea = async (req, res) => {
+
+    const { id } = req.params;
+
+    // Eliminar la tarea
+    const resultado = await Tareas.destroy({where : { id  }});
+
+    if(!resultado) return next();
+
+    res.status(200).send('Tarea Eliminada Correctamente');
+}
