@@ -1,50 +1,35 @@
-//cargar las librerias 
+//cargar librerias
 const express = require('express');
 const router = express.Router();
-// importar express validator
-const { body } = require('express-validator/check');
 
-//importar el controlador
+
+// importar controlador
 const proyectosController = require('../controllers/proyectosController');
-const tareasController = require('../controllers/tareasController');
 
-//importar modulos
-module.exports = function() {
+//importar modulos 
 
-	router.get('/', proyectosController.proyectosHome);
-	
-	router.get('/nuevo-proyecto', proyectosController.formularioProyecto);
+module.exports = function(){
+    // Rutas para el Home / 
+     
+    router.get('/', proyectosController.proyectosHome);
 
-	router.post('/nuevo-proyecto',body('nombre').not().isEmpty().trim().escape(),
-	proyectosController.nuevoProyecto);
-    // Listar Proyecto
-    router.get('/proyectos/:url', proyectosController.proyectoPorUrl);
-	//actualizar proyecto editar
-	router.get('/proyecto/editar/:id',
-	proyectosController.formularioEditar);
-	//actualizar proyecto con post
-	router.post('/nuevo-proyecto/:id',body('nombre').not().isEmpty().trim().escape(),
-	proyectosController.actualizarProyecto);
+    router.get('/nuevo-proyecto', proyectosController.formularioProyecto);
+    //enviar informacion
+    router.post('/nuevo-proyecto', proyectosController.nuevoProyecto);
 
-	// Eliminar Proyecto
-    router.delete('/proyectos/:url', 
-        proyectosController.eliminarProyecto
-    );
-    // Tareas
-    router.post('/proyectos/:url', 
-        tareasController.agregarTarea
-    );
-    // Actualizar Tarea
-    router.patch('/tareas/:id', 
-        tareasController.cambiarEstadoTarea
-    );
-        // Eliminar Tarea
-    router.delete('/tareas/:id',
-        tareasController.eliminarTarea
-    );
+    
 
 
-	
-	return router;
+    
+   
+  
+    return router;
 }
+
+
+
+
+
+
+
 

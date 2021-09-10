@@ -1,10 +1,9 @@
 const Sequelize = require('sequelize');
 
-const db = new Sequelize('uptasknode', 'root', 'rootroot', {
+const db = new Sequelize('uptasknode', 'root', '', {
   host: '127.0.0.1',
   dialect: 'mysql',
-  //port de la base de datos
-  port: '3306',
+  port: '3307',
   operatorsAliases: false,
   define: {
       timestamps: false
@@ -18,3 +17,51 @@ const db = new Sequelize('uptasknode', 'root', 'rootroot', {
 });
 
 module.exports = db;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
